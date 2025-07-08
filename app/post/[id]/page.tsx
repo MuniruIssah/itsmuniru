@@ -11,16 +11,20 @@ const SinglePost = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   if (!post) notFound;
 
+  const replies = posts.filter((item) => item.parentPost?.id === id);
+
   return (
     <PostPageLayout>
       <div className="items-center w-xl mx-auto min-h-screen gap-6  font-[family-name:var(--font-geist-sans)] border-x pt-10 overflow-y-auto">
         <div className="">
           <MainPost {...post} />
-          <div>
-            {post?.replies?.map((item, index) => (
-              <Post key={index} {...item} />
-            ))}
-          </div>
+          {replies.length > 0 && (
+            <div>
+              {replies.map((item, index) => (
+                <Post thread={false} key={index} {...item} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </PostPageLayout>

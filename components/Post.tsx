@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { IPost } from "@/types";
 import { MessageCircle, Pin } from "lucide-react";
 import React from "react";
@@ -6,23 +6,50 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import ImageGrid from "./ImageGrid";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-const Post = (post: IPost) => {
+import { getReplyCount } from "@/utils/getReplyCount";
+const Post = (post: IPost & { thread: boolean }) => {
+  return (
+    <div className="border-b pt-7">
+      {post.parentPost?.id && post.thread && (
+        <PostItem post={post.parentPost} isParent />
+      )}
+      <PostItem post={post} />
+    </div>
+  );
+};
+
+export default Post;
+
+const PostItem = ({
+  post,
+  isParent = false,
+}: {
+  post: IPost;
+  isParent?: boolean;
+}) => {
   const router = useRouter();
+  const replyCount = getReplyCount(post.id);
   return (
     <div
       onClick={() => router.push(`/post/${post.id}`)}
-      className={`flex gap-3 items-start border-b px-6 py-4 ${
+      className={`flex gap-3 items-stretch px-6  ${
         post.pinned ? "bg-zinc-900" : ""
       }`}
     >
-      <Link href={`/profile/${post.profile?.handle}`} className="z-[100]">
-        <Avatar className="mt-1">
-          <AvatarImage src={post.profile?.avatarUrl} className="object-cover" />
-          <AvatarFallback>
-            {post.profile?.name.charAt(0) ?? "SG"}
-          </AvatarFallback>
-        </Avatar>
-      </Link>
+      <div className="flex flex-col items-center gap-2">
+        <Link href={`/profile/${post.profile?.handle}`} className="">
+          <Avatar className="mt-1">
+            <AvatarImage
+              src={post.profile?.avatarUrl}
+              className="object-cover"
+            />
+            <AvatarFallback>
+              {post.profile?.name.charAt(0) ?? "SG"}
+            </AvatarFallback>
+          </Avatar>
+        </Link>
+        {isParent && <div className="border-1 flex-1 h-[100%]"></div>}
+      </div>
 
       <div className="">
         {/* CONTENT */}
@@ -41,20 +68,18 @@ const Post = (post: IPost) => {
               {post.pinned && <Pin size={18} className="rotate-45" />}
             </div>
 
-            <p className="">{post.content}</p>
+            <p className="whitespace-pre-line">{post.content}</p>
           </div>
           {/* IMAGES */}
           {post.images?.length && <ImageGrid images={post.images} />}
         </div>
         {/* ACTIONS */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center pb-7">
           <div className="flex gap-1 text-muted-foreground text-sm items-center">
-            <MessageCircle size={16} /> <span>{post.replies?.length ?? 0}</span>
+            <MessageCircle size={16} /> <span>{replyCount}</span>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-export default Post;

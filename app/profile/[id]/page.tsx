@@ -3,6 +3,7 @@ import PersonalDetailsSection from "@/components/PersonalDetailsSection";
 import Post from "@/components/Post";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { currentStack, tempPost } from "@/data";
+import { posts } from "@/data/posts";
 import { profiles } from "@/data/profiles";
 import { notFound } from "next/navigation";
 import React from "react";
@@ -31,6 +32,10 @@ const SingleProfile = async ({
 
   if (!profile) notFound;
 
+  const profilePosts = posts.filter(
+    (item) => item.tags?.includes(id) && !item.parentPost
+  );
+
   return (
     <PageLayout
       languagesAndFrameworks={languagesAndFrameworks}
@@ -56,8 +61,8 @@ const SingleProfile = async ({
           </TabsList>
           <TabsContent value="experience">
             <div>
-              {new Array(20).fill(0).map((item, index) => (
-                <Post key={index} {...tempPost} />
+              {profilePosts.map((item, index) => (
+                <Post thread={false} key={index} {...item} />
               ))}
             </div>
           </TabsContent>

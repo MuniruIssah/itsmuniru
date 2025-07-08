@@ -135,7 +135,7 @@ export const profiles: IProfile[] = [
     ],
     stats: [
       { value: 1, label: "Year" },
-      { value: 1, label: "Project" },
+      { value: 2, label: "Project" },
     ],
     tabs: ["all", "projects", "stack"],
   },

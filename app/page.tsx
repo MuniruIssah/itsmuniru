@@ -12,7 +12,7 @@ export default function Home() {
   const me = profiles.filter(item=>item.handle===MY_HANDLE)[0];
   const languagesAndFrameworks = currentStack[0].items;
   const toolsAndOthers = currentStack[1].items;
-  const allPosts=posts;
+  const allPosts=posts.filter(item=>!item.parentPost);
   return (
     <PageLayout languagesAndFrameworks={languagesAndFrameworks} toolsAndOthers={toolsAndOthers}>
       <div className="items-center max-w-xl mx-auto min-h-screen   gap-6  font-[family-name:var(--font-geist-sans)] border-x pt-10 overflow-y-auto">
@@ -36,7 +36,7 @@ export default function Home() {
           <TabsContent value="experience">
             <div>
               {allPosts.map((item, index) => (
-                <Post key={index} {...item} />
+                <Post thread key={index} {...item} />
               ))}
             </div>
           </TabsContent>

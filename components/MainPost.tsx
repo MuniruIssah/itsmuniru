@@ -45,7 +45,7 @@ const MainPost = (post: IPost) => {
               {post.pinned && <Pin size={18} className="rotate-45" />}
             </div>
 
-            <p className="">{post.content}</p>
+            <p className="whitespace-pre-line">{post.content}</p>
           </div>
           {/* IMAGES */}
           {post.images?.length && <ImageGrid images={post.images} />}
