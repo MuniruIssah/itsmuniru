@@ -53,7 +53,7 @@ const PostItem = ({
 
       <div className="">
         {/* CONTENT */}
-        <div className="flex flex-col gap-4 mb-2">
+        <div className="flex flex-col gap-4 mb-4">
           {/* MAIN CONTENT */}
           <div className="flex flex-col gap-1">
             <div className="flex justify-between items-center">

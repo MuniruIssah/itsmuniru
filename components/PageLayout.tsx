@@ -1,5 +1,11 @@
 import { IStack } from "@/data";
+import Image from "next/image";
 import React, { PropsWithChildren } from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface IPageLayout extends PropsWithChildren {
   languagesAndFrameworks: IStack[];
@@ -9,8 +15,23 @@ const PageLayout = (props: IPageLayout) => {
   const { languagesAndFrameworks, toolsAndOthers, children } = props;
   return (
     <div className="max-w-7xl mx-auto flex gap-x-8 max-h-[100vh]">
-      <div className="flex-1"></div>
-      
+      <div className="flex-1 flex flex-col items-center justify-center">
+        <Tooltip>
+          <TooltipTrigger>
+            <Image
+              src={"/images/galaxy.gif"}
+              alt="galaxy"
+              className="w-100"
+              width={100}
+              height={100}
+            />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>I didn't know what to do with this <span className="font-bold font-mono">SPACE</span></p>
+          </TooltipContent>
+        </Tooltip>
+      </div>
+
       {children}
       <div className="w-full flex-1 flex flex-col gap-8 pt-10">
         <div className="border rounded-xl p-3 py-5">

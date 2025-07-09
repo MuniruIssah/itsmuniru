@@ -20,7 +20,7 @@ const MainPost = (post: IPost) => {
           {/* MAIN CONTENT */}
           <div className="flex flex-col gap-1">
             <div className="flex justify-between items-center">
-              <div className="flex gap-2 items-center mb-2">
+              <div className="flex gap-2 items-center mb-4">
                 <Link href={`/profile/${post.profile?.handle}`}>
                   <Avatar className="mt-1">
                     <AvatarImage
