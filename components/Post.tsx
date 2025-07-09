@@ -38,7 +38,7 @@ const PostItem = ({
     >
       <div className="flex flex-col items-center gap-2">
         <Link href={`/profile/${post.profile?.handle}`} className="">
-          <Avatar className="mt-1">
+          <Avatar className="mt-1 w-11 h-11">
             <AvatarImage
               src={post.profile?.avatarUrl}
               className="object-cover"
@@ -59,7 +59,7 @@ const PostItem = ({
             <div className="flex justify-between items-center">
               <div className="flex gap-2">
                 <Link href={`/profile/${post.profile?.handle}`}>
-                  <span>{post.profile?.name}</span>
+                  <span className="font-bold">{post.profile?.name}</span>
                 </Link>
                 <span className="text-muted-foreground">
                   @{post.profile?.handle}

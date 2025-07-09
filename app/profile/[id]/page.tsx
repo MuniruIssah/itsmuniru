@@ -1,6 +1,7 @@
 import PageLayout from "@/components/PageLayout";
 import PersonalDetailsSection from "@/components/PersonalDetailsSection";
 import Post from "@/components/Post";
+import RelatedProfiles from "@/components/RelatedProfiles";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { currentStack, tempPost } from "@/data";
 import { posts } from "@/data/posts";
@@ -61,7 +62,12 @@ const SingleProfile = async ({
           </TabsList>
           <TabsContent value="experience">
             <div>
-              {profilePosts.map((item, index) => (
+              {profilePosts.slice(0,2).map((item, index) => (
+                <Post thread={false} key={index} {...item} />
+              ))}
+              <RelatedProfiles currentProfile={id} />
+              
+              {profilePosts.slice(2).map((item, index) => (
                 <Post thread={false} key={index} {...item} />
               ))}
             </div>

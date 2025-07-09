@@ -51,9 +51,9 @@ export const profiles: IProfile[] = [
     ],
     stats: [
       { value: 6, label: "Years of Experience" },
-      { value: 4, label: "Companies" },
+      { value: 4, label: "Companies Worked At" },
     ],
-    tabs: ["all", "projects", "stack"],
+    tabs: ["projects", "companies", "stack"],
   },
   {
     name: "GTBank Ghana",
