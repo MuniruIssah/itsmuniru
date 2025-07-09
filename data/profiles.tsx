@@ -9,6 +9,7 @@ export const profiles: IProfile[] = [
     name: "Issah Muniru",
     handle: "ningen_dewa_nai",
     avatarUrl: "/images/issah.jpg",
+    coverGradient:"bg-linear-to-r from-gray-500 to-slate-200",
     description:
       "A Fullstack Applications Developer with 6 years of experience building healthcare and banking products — recently at ViuHealth.",
     infoOrLink: [
@@ -58,6 +59,7 @@ export const profiles: IProfile[] = [
   {
     name: "GTBank Ghana",
     handle: "gtbank",
+    coverGradient:"bg-linear-to-r from-rose-500 to-amber-500",
     avatarUrl: "/images/gtbank-logo.png",
     description:
       "Guaranty Trust Bank is a leading African Bank that offers Internet Banking, Retail Banking, Corporate Banking, Investment Banking and many other banking services.",
@@ -86,6 +88,7 @@ export const profiles: IProfile[] = [
   {
     name: "Viuhealth",
     handle: "viuhealth",
+    coverGradient:"bg-linear-to-r from-sky-500 to-green-800",
     avatarUrl: "/images/viuhealth-logo.jpeg",
     description:
       "Day-to-Day Autoimmune Care, Simplified. Improving the lives of people living with autoimmune disease through personalized support and clinician-led care management.",
@@ -114,6 +117,7 @@ export const profiles: IProfile[] = [
   {
     name: "Mova",
     handle: "mova",
+    coverGradient:"bg-linear-to-r from-green-800 to-lime-300",
     avatarUrl: "/images/mova-icon.png",
     description:
       "Mova is an on-demand moving and delivery platform that connects users to reliable moving vans, laborers, and trailers.",
@@ -142,6 +146,7 @@ export const profiles: IProfile[] = [
   {
     name: "Mally Health",
     handle: "mallyhealth",
+    coverGradient:"bg-linear-to-r from-green-600 to-white",
     avatarUrl: "/images/mally-health-logo.png",
     description:
       "Mally Health is a care management platform designed to help users stay proactive about their wellness. It offers daily health tips, personalized reminders, and access to medical records in one secure place.",
@@ -170,9 +175,10 @@ export const profiles: IProfile[] = [
   {
     name: "Origo Software",
     handle: "origosoftware",
+    coverGradient:"bg-linear-to-r from-orange-500 to-gray-500",
     avatarUrl: "/images/origo-logo.jpg",
     description:
-      "Guaranty Trust Bank is a leading African Bank that offers Internet Banking, Retail Banking, Corporate Banking, Investment Banking and many other banking services.",
+      "Origo Software is a software company with products spanning various industries — from logistics to healthcare and more.",
     infoOrLink: [
       {
         icon: <XCircle size={18} className="text-red-600" />,
@@ -180,7 +186,7 @@ export const profiles: IProfile[] = [
       },
       {
         icon: <MapPin size={18} />,
-        label: "Tysons Corner, Virginia",
+        label: "Washington DC, USA",
       },
       {
         icon: <RiUserSettingsLine size={18} />,

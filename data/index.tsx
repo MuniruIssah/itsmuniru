@@ -7,6 +7,7 @@ import {
   SiExpress,
   SiGit,
   SiGithub,
+  SiJenkins,
   SiMongodb,
   SiNextdotjs,
   SiPython,
@@ -74,7 +75,11 @@ const currentStack: IStackGroup[] = [
         tags: ["viuhealth", "pensehealth"],
       },
       { label: "Astro", icon: <SiAstro />, tags: [] },
-      { label: "React Router", icon: <SiReactrouter />, tags: ["origosoftware"] },
+      {
+        label: "React Router",
+        icon: <SiReactrouter />,
+        tags: ["origosoftware"],
+      },
       { label: "React Native", icon: <TbBrandReactNative />, tags: ["gtbank"] },
       { label: "Expo", icon: <SiExpo />, tags: ["gtbank"] },
       {
@@ -158,6 +163,7 @@ const currentStack: IStackGroup[] = [
       },
       { label: "Vercel", icon: <SiVercel />, tags: ["mova", "mallyhealth"] },
       { label: "Render", icon: <SiRender />, tags: ["mallyhealth"] },
+      { label: "Jenkins", icon: <SiJenkins />, tags: ["origosoftware"] },
     ],
   },
 ];
@@ -360,6 +366,7 @@ const projects = [
 
 const tempProfile: IProfile = {
   name: "Issah Muniru",
+  coverGradient:"",
   handle: "ningen_dewa_nai",
   avatarUrl: "/images/issah.jpg",
   description:
@@ -379,9 +386,10 @@ const tempProfile: IProfile = {
 
 const tempPost: IPost = {
   id: "3",
-  content: "Designed and developed a customer checkout interface for the checkout API.",
+  content:
+    "Designed and developed a customer checkout interface for the checkout API.",
   profile: tempProfile,
-  pinned: true
+  pinned: true,
 };
 
 export { currentStack, experience, projects, tempPost };

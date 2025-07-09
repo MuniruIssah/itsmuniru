@@ -14,6 +14,7 @@ type InfoOrLink = {
 export interface IProfile {
   name: string;
   avatarUrl?: string;
+  coverGradient:string;
   handle: string;
   description: string;
   infoOrLink: InfoOrLink[];

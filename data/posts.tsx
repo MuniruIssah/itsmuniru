@@ -6,6 +6,8 @@ import {
 } from "./posts/mova";
 import { replyFactory } from "@/utils/replyFactory";
 import { mallyAbout, mallyBackendThread, mallyFrontendThread } from "./posts/mallyhealth";
+import { origoThread } from "./posts/origohealth";
+import { maeThread, trialViuThread, viuhealthBackendThread, viuhealthCIThread, viuhealthWebAppsThread } from "./posts/viuhealth";
 
 export const posts: IPost[] = [
 
@@ -15,5 +17,11 @@ export const posts: IPost[] = [
   ...movaAdminPortalThread,
   ...movaBackendThread,
   ...movaAboutThread,
+  ...trialViuThread,
+  ...maeThread,
+  ...viuhealthBackendThread,
+  ...viuhealthWebAppsThread,
+  ...viuhealthCIThread,
+  ...origoThread
 ];
 export { replyFactory };

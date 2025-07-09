@@ -16,8 +16,8 @@ export default function Home() {
   const allPosts=posts.filter(item=>!item.parentPost);
   return (
     <PageLayout languagesAndFrameworks={languagesAndFrameworks} toolsAndOthers={toolsAndOthers}>
-      <div className="items-center max-w-xl mx-auto min-h-screen   gap-6  font-[family-name:var(--font-geist-sans)] border-x pt-10 overflow-y-auto">
-        <div className="px-8 py-3">
+      <div className="items-center max-w-xl mx-auto min-h-screen   gap-6  font-[family-name:var(--font-geist-sans)] border-x  overflow-y-auto">
+        <div className="">
           <main className="flex flex-col gap-6 sm:gap-8 row-start-2 items-center sm:items-start">
             <PersonalDetailsSection {...me} />
           </main>
