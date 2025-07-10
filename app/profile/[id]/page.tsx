@@ -2,11 +2,12 @@ import PageLayout from "@/components/PageLayout";
 import PersonalDetailsSection from "@/components/PersonalDetailsSection";
 import Post from "@/components/Post";
 import RelatedProfiles from "@/components/RelatedProfiles";
+import StickyBack from "@/components/StickyBack";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { currentStack, tempPost } from "@/data";
 import { posts } from "@/data/posts";
 import { profiles } from "@/data/profiles";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import React from "react";
 
 const SingleProfile = async ({
@@ -16,6 +17,8 @@ const SingleProfile = async ({
 }) => {
   const id = (await params).id;
   const MY_PROFILE_ID = "ningen_dewa_nai";
+
+  if (id === MY_PROFILE_ID) redirect("/");
 
   const profile = profiles.filter((item) => item.handle === id)[0];
   const languagesAndFrameworks =
@@ -31,7 +34,7 @@ const SingleProfile = async ({
           (item) => item.tags.includes(id) || item.tags.includes("general")
         );
 
-  if (!profile) notFound;
+  if (!profile) redirect('/');
 
   const profilePosts = posts.filter(
     (item) => item.tags?.includes(id) && !item.parentPost
@@ -43,6 +46,8 @@ const SingleProfile = async ({
       toolsAndOthers={tools}
     >
       <div className="items-center max-w-xl mx-auto min-h-screen   gap-6  font-[family-name:var(--font-geist-sans)] border-x  overflow-y-auto">
+        <StickyBack type="profile" title={profile.name} />
+
         <div className="">
           <main className="flex flex-col gap-6 sm:gap-8 row-start-2 items-center sm:items-start">
             <PersonalDetailsSection {...profile} />
@@ -62,11 +67,11 @@ const SingleProfile = async ({
           </TabsList>
           <TabsContent value="experience">
             <div>
-              {profilePosts.slice(0,2).map((item, index) => (
+              {profilePosts.slice(0, 2).map((item, index) => (
                 <Post thread={false} key={index} {...item} />
               ))}
               <RelatedProfiles currentProfile={id} />
-              
+
               {profilePosts.slice(2).map((item, index) => (
                 <Post thread={false} key={index} {...item} />
               ))}
