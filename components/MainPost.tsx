@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import ImageGrid from "./ImageGrid";
 import Link from "next/link";
 import { getReplyCount } from "@/utils/getReplyCount";
+import { ProfileHoverCard } from "./ProfileHoverCard";
 
 const MainPost = (post: IPost) => {
   const replies = getReplyCount(post.id);
@@ -22,24 +23,33 @@ const MainPost = (post: IPost) => {
           <div className="flex flex-col gap-1">
             <div className="flex justify-between items-center">
               <div className="flex gap-3 items-center mb-4">
-                <Link href={`/profile/${post.profile?.handle}`}>
-                  <Avatar className="mt-1 w-11 h-11">
-                    <AvatarImage
-                      src={post.profile?.avatarUrl}
-                      className="object-cover"
-                    />
-                    <AvatarFallback>
-                      {post.profile?.name.charAt(0) ?? "SG"}
-                    </AvatarFallback>
-                  </Avatar>
-                </Link>
-                <div className="flex gap-2">
+                <ProfileHoverCard profile={post.profile!}>
                   <Link href={`/profile/${post.profile?.handle}`}>
-                    <span className="font-bold">{post.profile?.name}</span>
+                    <Avatar className="mt-1 w-11 h-11">
+                      <AvatarImage
+                        src={post.profile?.avatarUrl}
+                        className="object-cover"
+                      />
+                      <AvatarFallback>
+                        {post.profile?.name.charAt(0) ?? "SG"}
+                      </AvatarFallback>
+                    </Avatar>
                   </Link>
-                  <span className="text-muted-foreground">
-                    @{post.profile?.handle}
-                  </span>
+                </ProfileHoverCard>
+                <div className="flex gap-2">
+                  <ProfileHoverCard profile={post.profile!}>
+                    <Link href={`/profile/${post.profile?.handle}`}>
+                      <span className="font-bold">{post.profile?.name}</span>
+                    </Link>
+                  </ProfileHoverCard>
+
+                  <ProfileHoverCard profile={post.profile!}>
+                    <Link href={`/profile/${post.profile?.handle}`}>
+                      <span className="text-muted-foreground">
+                        @{post.profile?.handle}
+                      </span>
+                    </Link>
+                  </ProfileHoverCard>
                 </div>
               </div>
 

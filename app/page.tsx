@@ -1,4 +1,5 @@
-import { currentStack, tempPost } from "@/data";
+"use client";
+import { currentStack } from "@/data";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PersonalDetailsSection from "@/components/PersonalDetailsSection";
@@ -14,6 +15,7 @@ export default function Home() {
   const languagesAndFrameworks = currentStack[0].items;
   const toolsAndOthers = currentStack[1].items;
   const allPosts=posts.filter(item=>!item.parentPost);
+  
   return (
     <PageLayout languagesAndFrameworks={languagesAndFrameworks} toolsAndOthers={toolsAndOthers}>
       <div className="items-center max-w-xl mx-auto min-h-screen   gap-6  font-[family-name:var(--font-geist-sans)] border-x  overflow-y-auto">
