@@ -81,7 +81,7 @@ export const profiles: IProfile[] = [
     ],
     stats: [
       { value: 2, label: "Years" },
-      { value: 6, label: "Projects" },
+      { value: 5, label: "Projects" },
     ],
     tabs: ["all", "projects", "stack"],
   },
@@ -139,7 +139,7 @@ export const profiles: IProfile[] = [
     ],
     stats: [
       { value: 1, label: "Year" },
-      { value: 2, label: "Project" },
+      { value: 2, label: "Projects" },
     ],
     tabs: ["all", "projects", "stack"],
   },
