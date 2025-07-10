@@ -14,8 +14,8 @@ interface IPageLayout extends PropsWithChildren {
 const PageLayout = (props: IPageLayout) => {
   const { languagesAndFrameworks, toolsAndOthers, children } = props;
   return (
-    <div className="max-w-7xl mx-auto flex gap-x-8 max-h-[100vh]">
-      <div className="flex-1 flex flex-col items-center justify-center">
+    <div className="container xl:max-w-7xl mx-auto flex gap-x-8 max-h-[100vh]">
+      <div className="flex-1 hidden lg:flex flex-col items-center justify-center">
         <Tooltip>
           <TooltipTrigger>
             <Image
@@ -33,7 +33,7 @@ const PageLayout = (props: IPageLayout) => {
       </div>
 
       {children}
-      <div className="w-full flex-1 flex flex-col gap-8 pt-10">
+      <div className="w-full flex-1 hidden lg:flex flex-col gap-8 pt-10">
         <div className="border rounded-xl p-3 py-5">
           <div className="flex flex-col gap-2">
             <span className="text-xl font-bold">Languages & Frameworks</span>

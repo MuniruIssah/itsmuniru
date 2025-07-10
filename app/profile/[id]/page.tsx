@@ -45,7 +45,7 @@ const SingleProfile = async ({
       languagesAndFrameworks={languagesAndFrameworks}
       toolsAndOthers={tools}
     >
-      <div className="items-center max-w-xl mx-auto min-h-screen   gap-6  font-[family-name:var(--font-geist-sans)] border-x  overflow-y-auto">
+      <div className="items-center max-w-xl lg:max-w-md xl:max-w-xl mx-auto min-h-screen   gap-6  font-[family-name:var(--font-geist-sans)] border-x  overflow-y-auto">
         <StickyBack type="profile" title={profile.name} />
 
         <div className="">

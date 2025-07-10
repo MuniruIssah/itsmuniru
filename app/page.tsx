@@ -10,15 +10,18 @@ import { posts } from "@/data/posts";
 import RelatedProfiles from "@/components/RelatedProfiles";
 
 export default function Home() {
-  const MY_HANDLE='ningen_dewa_nai'
-  const me = profiles.filter(item=>item.handle===MY_HANDLE)[0];
+  const MY_HANDLE = "ningen_dewa_nai";
+  const me = profiles.filter((item) => item.handle === MY_HANDLE)[0];
   const languagesAndFrameworks = currentStack[0].items;
   const toolsAndOthers = currentStack[1].items;
-  const allPosts=posts.filter(item=>!item.parentPost);
-  
+  const allPosts = posts.filter((item) => !item.parentPost);
+
   return (
-    <PageLayout languagesAndFrameworks={languagesAndFrameworks} toolsAndOthers={toolsAndOthers}>
-      <div className="items-center max-w-xl mx-auto min-h-screen   gap-6  font-[family-name:var(--font-geist-sans)] border-x  overflow-y-auto">
+    <PageLayout
+      languagesAndFrameworks={languagesAndFrameworks}
+      toolsAndOthers={toolsAndOthers}
+    >
+      <div className="items-center max-w-xl lg:max-w-md xl:max-w-xl mx-auto min-h-screen   gap-6  font-[family-name:var(--font-geist-sans)] border-x  overflow-y-auto">
         <div className="">
           <main className="flex flex-col gap-6 sm:gap-8 row-start-2 items-center sm:items-start">
             <PersonalDetailsSection {...me} />
@@ -38,10 +41,10 @@ export default function Home() {
           </TabsList>
           <TabsContent value="experience">
             <div>
-              {allPosts.slice(0,2).map((item, index) => (
+              {allPosts.slice(0, 2).map((item, index) => (
                 <Post thread key={index} {...item} />
               ))}
-              <RelatedProfiles/>
+              <RelatedProfiles />
 
               {allPosts.slice(2).map((item, index) => (
                 <Post thread key={index} {...item} />

@@ -16,7 +16,7 @@ const SinglePost = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <PostPageLayout>
-      <div className="items-center w-xl mx-auto min-h-screen gap-6  font-[family-name:var(--font-geist-sans)] border-x overflow-y-auto">
+      <div className="items-center max-w-xl lg:max-w-md xl:max-w-xl mx-auto min-h-screen gap-6  font-[family-name:var(--font-geist-sans)] border-x overflow-y-auto">
         <div className="">
           <StickyBack type="post" />
           <MainPost {...post} />

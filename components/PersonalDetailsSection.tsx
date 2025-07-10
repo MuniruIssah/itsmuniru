@@ -48,7 +48,7 @@ const PersonalDetailsSection = (profile: IProfile) => {
             </div>
           ))}
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-2 md:gap-4">
           {profile.stats.map((item, index) => (
             <div className="flex items-center gap-1" key={index}>
               <span className="font-extrabold">{item.value}</span>
