@@ -12,7 +12,7 @@ const MainPost = (post: IPost) => {
   const replies = getReplyCount(post.id);
   return (
     <div
-      className={`items-start border-b px-6 py-4 ${
+      className={`items-start border-b px-4 sm:px-6 py-4 ${
         post.pinned ? "bg-zinc-900" : ""
       }`}
     >
@@ -25,7 +25,7 @@ const MainPost = (post: IPost) => {
               <div className="flex gap-3 items-center mb-4">
                 <ProfileHoverCard profile={post.profile!}>
                   <Link href={`/profile/${post.profile?.handle}`}>
-                    <Avatar className="mt-1 w-11 h-11">
+                    <Avatar className="mt-1 w-9 h-9 md:w-11 md:h-11">
                       <AvatarImage
                         src={post.profile?.avatarUrl}
                         className="object-cover"

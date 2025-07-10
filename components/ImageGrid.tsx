@@ -70,19 +70,19 @@ export default function ImageGrid({ images }: ImageGridProps) {
     <div className="mb-3" onClick={(e)=>e.stopPropagation()}>
       {/* Image Grid */}
       {count === 1 && (
-        <div className="rounded-lg overflow-hidden h-[45vh]">
+        <div className="rounded-lg overflow-hidden h-[30vh] md:h-[40vh]">
           {renderImage(images[0], 0)}
         </div>
       )}
 
       {count === 2 && (
-        <div className="grid grid-cols-2 gap-1 rounded-lg overflow-hidden h-[45vh]">
+        <div className="grid grid-cols-2 gap-1 rounded-lg overflow-hidden h-[30vh] md:h-[40vh]">
           {images.map((img, index) => renderImage(img, index))}
         </div>
       )}
 
       {count === 3 && (
-        <div className="grid grid-cols-2 grid-rows-2  gap-1 rounded-lg overflow-hidden h-[45vh]">
+        <div className="grid grid-cols-2 grid-rows-2  gap-1 rounded-lg overflow-hidden h-[30vh] md:h-[40vh]">
           <div className="col-span-1 row-span-2">
             {renderImage(images[0], 0)}
           </div>
@@ -95,7 +95,7 @@ export default function ImageGrid({ images }: ImageGridProps) {
       )}
 
       {count >= 4 && (
-        <div className="grid grid-cols-2 grid-rows-2 gap-1 rounded-lg overflow-hidden h-[45vh]">
+        <div className="grid grid-cols-2 grid-rows-2 gap-1 rounded-lg overflow-hidden h-[30vh] md:h-[40vh]">
           {images.slice(0, 4).map((img, index) => renderImage(img, index))}
         </div>
       )}

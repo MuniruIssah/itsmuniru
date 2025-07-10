@@ -33,14 +33,14 @@ const PostItem = ({
   return (
     <div
       onClick={() => router.push(`/post/${post.id}`)}
-      className={`flex gap-3 items-stretch px-6  ${
+      className={`flex gap-3 items-stretch px-4 md:px-6  ${
         post.pinned ? "bg-zinc-900" : ""
       }`}
     >
       <div className="flex flex-col items-center gap-2">
         <ProfileHoverCard profile={post.profile!}>
           <Link href={`/profile/${post.profile?.handle}`} className="" onClick={(e) => e.stopPropagation()}>
-            <Avatar className="mt-1 w-11 h-11">
+            <Avatar className="mt-1 w-9 h-9 md:w-11 md:h-11">
               <AvatarImage
                 src={post.profile?.avatarUrl}
                 className="object-cover"
