@@ -30,9 +30,9 @@ export default function Home() {
             <TabsTrigger value="companies" className="flex-1">
               Companies
             </TabsTrigger>
-            <TabsTrigger value="stack" className="flex-1">
+            {/* <TabsTrigger value="stack" className="flex-1">
               Stack
-            </TabsTrigger>
+            </TabsTrigger> */}
           </TabsList>
           <TabsContent value="experience">
             <div>
@@ -49,7 +49,9 @@ export default function Home() {
           <TabsContent value="companies">
             <RelatedProfiles simple />
           </TabsContent>
-          <TabsContent value="stack"></TabsContent>
+          {/* <TabsContent value="stack">
+           
+          </TabsContent> */}
         </Tabs>
       </div>
     </PageLayout>

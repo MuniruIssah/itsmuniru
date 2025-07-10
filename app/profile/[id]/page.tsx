@@ -51,14 +51,14 @@ const SingleProfile = async ({
         <Tabs defaultValue="experience" className="mt-5">
           <TabsList className="flex w-full">
             <TabsTrigger value="experience" className="flex-1">
-              All
+              Feed
             </TabsTrigger>
-            <TabsTrigger value="project" className="flex-1">
+            {/* <TabsTrigger value="project" className="flex-1">
               Projects
             </TabsTrigger>
             <TabsTrigger value="stack" className="flex-1">
               Stack
-            </TabsTrigger>
+            </TabsTrigger> */}
           </TabsList>
           <TabsContent value="experience">
             <div>
@@ -72,8 +72,8 @@ const SingleProfile = async ({
               ))}
             </div>
           </TabsContent>
-          <TabsContent value="project"></TabsContent>
-          <TabsContent value="stack"></TabsContent>
+          {/* <TabsContent value="project"></TabsContent>
+          <TabsContent value="stack"></TabsContent> */}
         </Tabs>
       </div>
     </PageLayout>
