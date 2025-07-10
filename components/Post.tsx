@@ -7,6 +7,7 @@ import ImageGrid from "./ImageGrid";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { getReplyCount } from "@/utils/getReplyCount";
+import { ProfileHoverCard } from "./ProfileHoverCard";
 const Post = (post: IPost & { thread: boolean }) => {
   return (
     <div className="border-b pt-7">
@@ -37,17 +38,19 @@ const PostItem = ({
       }`}
     >
       <div className="flex flex-col items-center gap-2">
-        <Link href={`/profile/${post.profile?.handle}`} className="">
-          <Avatar className="mt-1 w-11 h-11">
-            <AvatarImage
-              src={post.profile?.avatarUrl}
-              className="object-cover"
-            />
-            <AvatarFallback>
-              {post.profile?.name.charAt(0) ?? "SG"}
-            </AvatarFallback>
-          </Avatar>
-        </Link>
+        <ProfileHoverCard profile={post.profile!}>
+          <Link href={`/profile/${post.profile?.handle}`} className="" onClick={(e) => e.stopPropagation()}>
+            <Avatar className="mt-1 w-11 h-11">
+              <AvatarImage
+                src={post.profile?.avatarUrl}
+                className="object-cover"
+              />
+              <AvatarFallback>
+                {post.profile?.name.charAt(0) ?? "SG"}
+              </AvatarFallback>
+            </Avatar>
+          </Link>
+        </ProfileHoverCard>
         {isParent && <div className="border-1 flex-1 h-[100%]"></div>}
       </div>
 
@@ -58,12 +61,19 @@ const PostItem = ({
           <div className="flex flex-col gap-1">
             <div className="flex justify-between items-center">
               <div className="flex gap-2">
-                <Link href={`/profile/${post.profile?.handle}`}>
-                  <span className="font-bold">{post.profile?.name}</span>
-                </Link>
-                <span className="text-muted-foreground">
-                  @{post.profile?.handle}
-                </span>
+                <ProfileHoverCard profile={post.profile!}>
+                  <Link href={`/profile/${post.profile?.handle}`} onClick={(e) => e.stopPropagation()}>
+                    <span className="font-bold">{post.profile?.name}</span>
+                  </Link>
+                </ProfileHoverCard>
+
+                <ProfileHoverCard profile={post.profile!}>
+                  <Link href={`/profile/${post.profile?.handle}`} onClick={(e) => e.stopPropagation()}>
+                    <span className="text-muted-foreground">
+                      @{post.profile?.handle}
+                    </span>
+                  </Link>
+                </ProfileHoverCard>
               </div>
               {post.pinned && <Pin size={18} className="rotate-45" />}
             </div>

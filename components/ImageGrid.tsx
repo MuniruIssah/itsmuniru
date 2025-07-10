@@ -67,7 +67,7 @@ export default function ImageGrid({ images }: ImageGridProps) {
   );
 
   return (
-    <div className="mb-3">
+    <div className="mb-3" onClick={(e)=>e.stopPropagation()}>
       {/* Image Grid */}
       {count === 1 && (
         <div className="rounded-lg overflow-hidden h-[45vh]">

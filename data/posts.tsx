@@ -21,8 +21,8 @@ export const posts: IPost[] = [
   ...maeThread,
   ...viuhealthBackendThread,
   ...viuhealthWebAppsThread,
-  ...gtbankThreads,
   ...viuhealthCIThread,
+  ...gtbankThreads,
   ...origoThread
 ];
 export { replyFactory };
