@@ -25,10 +25,6 @@ const self_onboarding: IPost = {
     },
 
     {
-      src: "/images/selfonboard2.png",
-      alt: "Self Onboarding 3",
-    },
-    {
       src: "/images/selfonboard.png",
       alt: "Self Onboarding 4",
     },
