@@ -16,8 +16,8 @@ const SinglePost = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <PostPageLayout>
-      <div className="items-center max-w-xl lg:max-w-md xl:max-w-xl mx-auto min-h-screen gap-6  font-[family-name:var(--font-geist-sans)] border-x overflow-y-auto">
-        <div className="">
+      <div className="items-center  w-xl mx-auto min-h-screen gap-6  font-[family-name:var(--font-geist-sans)] border-x overflow-y-auto">
+        <div className="w-full">
           <StickyBack type="post" />
           <MainPost {...post} />
           {replies.length > 0 && (
