@@ -10,7 +10,7 @@ const PersonalDetailsSection = (profile: IProfile) => {
   return (
     <div>
       <div className={`w-full h-28 ${profile.coverGradient}`}></div>
-        <Avatar className="-mt-12 ml-7 w-24 h-24 ring-4 ring-black">
+        <Avatar className="-mt-12 ml-7 w-24 h-24 ring-4 ring-black bg-red-400">
           <AvatarImage src={profile?.avatarUrl} className="object-cover" />
           <AvatarFallback>
             {profile?.name.charAt(0) ?? "SG"}

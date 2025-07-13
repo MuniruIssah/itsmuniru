@@ -8,7 +8,7 @@ export const profiles: IProfile[] = [
   {
     name: "Issah Muniru",
     handle: "ningen_dewa_nai",
-    avatarUrl: "/images/issah.jpg",
+    avatarUrl: "/images/missah.png",
     coverGradient:"bg-linear-to-r from-gray-500 to-slate-200",
     description:
       "A Fullstack Applications Developer with 6 years of experience building healthcare and banking products — recently at ViuHealth.",
